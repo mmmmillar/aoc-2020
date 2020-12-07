@@ -20,8 +20,8 @@ defmodule AOC.DayTwo do
           | %{first: non_neg_integer, password: binary, second: non_neg_integer, x: any}
         ) :: boolean
   def is_valid_2(e) do
-    first = String.slice(e.password, e.first - 1, 1) == e.x
-    second = String.slice(e.password, e.second - 1, 1) == e.x
+    first = String.at(e.password, e.first - 1) == e.x
+    second = String.at(e.password, e.second - 1) == e.x
 
     (first and !second) or (!first and second)
   end
