@@ -15,10 +15,6 @@ defmodule AOC.DayTwo do
     required_char_count >= e.first and required_char_count <= e.second
   end
 
-  @spec is_valid_2(
-          atom
-          | %{first: non_neg_integer, password: binary, second: non_neg_integer, x: any}
-        ) :: boolean
   def is_valid_2(e) do
     first = String.at(e.password, e.first - 1) == e.x
     second = String.at(e.password, e.second - 1) == e.x
